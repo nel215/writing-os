@@ -14,7 +14,25 @@ int 0x10
 mov al, 13
 int 0x10
 
+; print X
+;mov al, the_secret
+;int 0x10
+;
+;mov al, [the_secret]
+;int 0x10
+
+mov bx, the_secret
+add bx, 0x7c00
+mov al, [bx]
+int 0x10
+
+mov al, [0x7c2e]
+int 0x10
+
 jmp $ ; infinite loop
+
+the_secret:
+    db "X"
 
 ; Fill with 510 zeros
 times 510-($-$$) db 0
