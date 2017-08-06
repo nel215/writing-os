@@ -1,4 +1,5 @@
 mov ah, 0x0e ; tty mode
+; print hello
 mov al, 'H'
 int 0x10
 mov al, 'e'
@@ -7,6 +8,10 @@ mov al, 'l'
 int 0x10
 int 0x10
 mov al, 'o'
+int 0x10
+mov al, 10
+int 0x10
+mov al, 13
 int 0x10
 
 jmp $ ; infinite loop
